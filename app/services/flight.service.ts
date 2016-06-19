@@ -37,4 +37,13 @@ export class FlightService {
         });
     }
 
+    public getAvailableSeatsNo(flight: Flight): Observable<number> {
+        return new Observable<number>((obs) => {
+            setTimeout( () => {
+                obs.next(Math.round(Math.random()*10) + 1);
+                obs.complete();
+            }, (Math.random() * 1000))
+        })
+    } 
+
 }

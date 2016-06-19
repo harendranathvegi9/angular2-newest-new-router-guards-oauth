@@ -1,6 +1,10 @@
 <div style="padding:20px;" 
      [ngStyle]="{'background-color': (selectedItem == item) ? 'orange' : 'lightsteelblue' }" >
 
+	<button class="btn btn-default"
+					(click)="availableSeats = flightService.getAvailableSeatsNo()">Check available seats</button>
+	<div>Available seats <span innerHTML="{{ availableSeats | format:'b':'i':'u' }}"></span></div>	
+
 	<h2>{{item.from}} - {{item.to}}</h2>
 	<p>Flugnr. #{{item.id}}</p>	
 	<p>Datum: {{item.date.substr(0,10)}}</p>	

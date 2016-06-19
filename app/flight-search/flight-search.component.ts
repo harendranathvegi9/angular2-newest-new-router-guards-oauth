@@ -37,6 +37,10 @@ export class FlightSearchComponent {
         this.selectedFlight = f;
     }
 
+    changeNotification(flight: Flight) {
+        this.selectedFlight = flight;
+    }
+
     search() {
        
         this.flightService

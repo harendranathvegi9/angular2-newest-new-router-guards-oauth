@@ -7,7 +7,7 @@ import { FlightBookingComponent} from './flight-booking/flight-booking.component
 import { FlightBookingGuard} from './flight-booking/flight-booking.guard';
 import { FlightEditGuard} from './flight-edit/flight-edit.guard';
 
-const APP_ROUTES: RouterConfig = [
+export const APP_ROUTES: RouterConfig = [
     {
         path: '/home',
         component: HomeComponent,

@@ -31,6 +31,10 @@ export class Emphasize {
     this.toggleEmphasize(false);
   }
 
+  @HostListener('click', ['$event.target']) clicked(target) {
+    console.log(`Clicked element ${target.innerText}`);
+  }
+
   toggleEmphasize(active) {
     if (active) {
       this.el.nativeElement.style.border = `2px solid ${this._borderColor}`;

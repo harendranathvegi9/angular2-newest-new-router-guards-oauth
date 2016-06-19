@@ -64,13 +64,17 @@
 <div *ngFor="let flight of flights" class="col-sm-4">
     <flight-card    [item]="flight"
                     [(selectedItem)]="selectedFlight">
+    <!--<flight-card    [item]="flight"
+                    [selectedItem]="selectedFlight"
+                    (selectedItemChange)="changeNotification($event)">-->
         <a class="btn btn-default" [routerLink]="['../flight-edit', flight.id]">Edit</a>
     </flight-card>
     
 </div>    
 
-
-<pre>Warenkorb:
-------------------
-{{selectedFlight | json}} 
-</pre>
+<div class="row col-xs-12">
+    <pre>Warenkorb:
+    ------------------
+    {{selectedFlight | json}} 
+    </pre>
+</div>
