@@ -22,6 +22,20 @@ This will start the server on http://localhost:8080
 npm run server
 ```
 
+## Unit Tests
+
+To start the unit tests run:
+
+```
+npm test
+```
+
+If you want to run them in continous TDD mode run:
+
+```
+npm run test:watch
+```
+
 ## E2E
 
 Start the server in one terminal:
