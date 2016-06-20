@@ -22,4 +22,22 @@ This will start the server on http://localhost:8080
 npm run server
 ```
 
+## E2E
 
+Start the server in one terminal:
+
+```
+npm run server
+```
+
+In another terminal first time install E2E dependencies
+
+```
+npm run pree2e
+```
+
+and afterwards
+
+```
+npm run e2e
+```
