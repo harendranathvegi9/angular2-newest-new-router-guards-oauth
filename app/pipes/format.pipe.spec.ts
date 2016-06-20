@@ -1,5 +1,4 @@
 import {FormatPipe} from './format.pipe';
-import {tick} from '@angular/core/testing';
 import {Observable} from 'rxjs';
 
 describe("Format pipe without NG helpers", () => {

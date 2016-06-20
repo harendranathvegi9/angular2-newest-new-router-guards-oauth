@@ -12,6 +12,7 @@ import {
 
 import {TestComponentBuilder} from '@angular/compiler/testing';
 
+import { myCustomMatchers } from './custom.matcher';
 import { Emphasize } from './emphasize.directive';
 
 @Component({ 
@@ -39,6 +40,11 @@ describe('Directive: Emphasize', () => {
     TestComponentBuilder
   ]);
 
+  // setup custom matchers
+  beforeEach(function() {
+    jasmine.addMatchers(myCustomMatchers);
+  });
+
   beforeEach(injectAsync([TestComponentBuilder], tcb => {
     return tcb
       .createAsync(Container)
@@ -50,13 +56,21 @@ describe('Directive: Emphasize', () => {
     let container = fixture.componentInstance,
         div = fixture.nativeElement.querySelector('div');
     
-    expect(div.style.border).toBe("");
-    expect(div.style.backgroundColor).toBe("");
+    // without custom matcher
+    // expect(div.style.border).toBe("");
+    // expect(div.style.backgroundColor).toBe("");
+
+    // with custom matcher
+    (<any>expect(div)).toBeEmphasized({ border: "", backgroundColor: ""});
 
     // manually fire mouseenter
     FireEvent(div, "mouseenter");
 
-    expect(div.style.border).toBe("2px solid orange");
-    expect(div.style.backgroundColor).toBe("yellow");
+    // without custom matcher
+    // expect(div.style.border).toBe("2px solid orange");
+    // expect(div.style.backgroundColor).toBe("yellow");
+
+    // with custom matcher
+    (<any>expect(div)).toBeEmphasized({ border: "2px solid orange", backgroundColor: "yellow"});
   });
 });
